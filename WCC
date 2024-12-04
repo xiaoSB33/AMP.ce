@@ -1,0 +1,20 @@
+a1= true 
+a2= false 
+a3=3.14
+a4=" This ' is a string "
+ print (a1,a2,a3+2*10,a4.." miao ")
+ 
+t ={}
+ t [1]=123
+ t ['1']=222
+ t . Name =" XiaoSB33 "
+ 
+print ( t [1], t ['1'], t . Name )
+ addsub = function ( x , y )
+ return x + y , x - y 
+ 
+end 
+
+r1,r2= addsub (a3,3)
+print (r1,r2)
+ 
