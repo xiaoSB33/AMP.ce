@@ -1,5 +1,5 @@
 game:GetService("StarterGui"):SetCore("SendNotification", {
-  Title = "空云V3脚本",
+  Title = "空云脚本V3",
   Text = "欢迎使用空云脚本",
   Duration = 3,
   Callback = bindable,
