@@ -1,12 +1,12 @@
 game:GetService("StarterGui"):SetCore("SendNotification", {
-  Title = "空云脚本V3",
+  Title = "空云脚本V3(看到这个代表可以用)",
   Text = "欢迎使用空云脚本",
-  Duration = 3,
+  Duration = 4,
   Callback = bindable,
   Button1 = "感谢您的使用",
   Button2 = "每周更新两三次",
 })
-wait(2)
+wait(4)
 game:GetService("StarterGui"):SetCore("SendNotification", {
   Title = "空云脚本",
   Text = "每周都会更新几个服务器 更新有点慢 请见谅",
@@ -15,7 +15,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
   Button1 = "祝您使用愉快",
   Button2 = "玩的开心",
 })
-wait(2)
+wait(4)
 local VirtualUserService = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
   
@@ -44,6 +44,7 @@ local CNScript = window:Tab("脚本中心", "6031302918")--3
 local FEScript = window:Tab("FE", "6022668955")--4
 local buildaship = window:Tab("造船寻宝", "6031097229")--5
 local buildashie = window:Tab("鱼", "6031097229")--5
+local buildashic = window:Tab("把火车开到终点", "6031097229")--5
 local Natural = window:Tab("自然灾害生存", "6031097229")--6
 local prison = window:Tab("监狱人生", "6031097229")--7
 local ninja = window:Tab("忍者传奇", "6031097229")--8
@@ -116,6 +117,8 @@ local Tab3 = buildaship:section("主要的", true)
 local fakeTab3 = buildaship:section("脚本", true)
 local LOlTab3 = buildaship:section("角色", true)
 local LOlTab999 = buildashie:section("脚本", true)
+local LOlTab998 = buildashic:section("生成火车", true)
+local LOlTab997 = buildashic:section("崩服", true)
 local MainTab4 = prison:section("主要的", true)
 local cnTab4 = prison:section("脚本", true)
 local deliverTab4 = prison:section("传送地图🗺️", true)
@@ -1835,15 +1838,15 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/
     end
 )
 CN:Button(
-    "星空脚本",
+    "叶脚本",
     function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/UWU/main/%E5%85%B6%E4%BB%96%E5%9B%BD%E5%86%85%E8%84%9A%E6%9C%AC/%E6%98%9F%E7%A9%BA%E8%84%9A%E6%9C%AC/MoonSecV3.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/roblox-ye/QQ515966991/refs/heads/main/ROBLOX-YE-SCRIPT-XIAOYE.lua"))()
     end
 )
 CN:Button(
-    "林脚本",
+    "光脚本",
     function()
-lin = "作者林"lin ="林QQ群 747623342"loadstring(game:HttpGet("https://raw.githubusercontent.com/linnblin/lin/main/lin"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/qwrt5589/eododo/018ff5d13517b365d1cc169b2c01f373a4c12970/guang.txt"))()
     end
 )
 CN:Button(
@@ -2787,6 +2790,34 @@ LOlTab3:Button(
 
 LOlTab999:Button("空云制作",function()
 loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/Wind/sb/鱼.lua", true))()
+end)
+
+
+
+
+LOlTab998:Button("生成Expreso火车",function()
+game:GetService("ReplicatedStorage").SpawnTrenExpreso:FireServer()
+end)
+LOlTab998:Button("生成例车",function()
+game:GetService("ReplicatedStorage").SpawnTrenAve:FireServer()
+end)
+LOlTab998:Button("生成四节火车",function()
+game:GetService("ReplicatedStorage").SpawnTrenUnderground:FireServer()
+end)
+LOlTab998:Button("生成运货火车",function()
+game:GetService("ReplicatedStorage").SpawnTrenContainer:FireServer()
+end)
+LOlTab998:Button("生成手推车",function()
+game:GetService("ReplicatedStorage").SpawnTrenPalanca:FireServer()
+end)
+LOlTab997:Button("无限循环(不卡死)",function()
+while true do
+game:GetService("ReplicatedStorage").SpawnTrenUnderground:FireServer()
+task.wait()
+end
+end)
+LOlTab997:Button("(卡死)",function()
+while true do game:GetService("ReplicatedStorage").SpawnTrenUnderground:FireServer() end
 end)
 
 
