@@ -1,3 +1,37 @@
+game:GetService("StarterGui"):SetCore("SendNotification", {
+  Title = "空云V2脚本",
+  Text = "欢迎使用空云脚本",
+  Duration = 1,
+  Callback = bindable,
+  Button1 = "感谢您的使用",
+  Button2 = "每周更新两三次",
+})
+wait(1.5)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+  Title = "空云脚本",
+  Text = "每周都会更新几个服务器 更新有点慢 请见谅",
+  Duration = 2,
+  Callback = bindable,
+  Button1 = "祝您使用愉快",
+  Button2 = "玩的开心",
+})
+wait(1.5)
+local VirtualUserService = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+  
+  VirtualUserService:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+  wait(1)
+  VirtualUserService:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+end)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+  Title = "空云脚本",
+  Text = "已自动开启反挂机",
+  Duration = 2,
+  Callback = bindable,
+  Button1 = "开启成功",
+  Button2 = "谢谢使用",
+})
+
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/renlua/block/main/UI/%E5%BD%A9%E8%99%B9UI.lua", true))()
 ----------------------------------------------------------------------------------------------------------------------------------------
 local window = library:new("空云脚本V3")--V2.1.3
