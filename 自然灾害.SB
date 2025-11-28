@@ -43,6 +43,7 @@ local SettingsTab = window:Tab("设置", "6034509993")--2
 local CNScript = window:Tab("脚本中心", "6031302918")--3
 local FEScript = window:Tab("FE", "6022668955")--4
 local buildaship = window:Tab("造船寻宝", "6031097229")--5
+local buildashie = window:Tab("鱼", "6031097229")--5
 local Natural = window:Tab("自然灾害生存", "6031097229")--6
 local prison = window:Tab("监狱人生", "6031097229")--7
 local ninja = window:Tab("忍者传奇", "6031097229")--8
@@ -114,6 +115,7 @@ local Tab2 = Natural:section("脚本中心", true)
 local Tab3 = buildaship:section("主要的", true)
 local fakeTab3 = buildaship:section("脚本", true)
 local LOlTab3 = buildaship:section("角色", true)
+local LOlTab999 = buildashie:section("脚本", true)
 local MainTab4 = prison:section("主要的", true)
 local cnTab4 = prison:section("脚本", true)
 local deliverTab4 = prison:section("传送地图🗺️", true)
@@ -2136,6 +2138,13 @@ game.Players.LocalPlayer.UserId = playid
 getgenv().FH = "鱼龙脚本"loadstring(game:HttpGet(string.char(104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,102,50,48,105,51,48,115,52,48,104,47,70,72,47,109,97,105,110,47,70,72,46,108,117,97)))()
 end)]]
 AQ:Label("有没有收费其他脚本，请加空云QQ316295205")
+AQ:Button(
+    "剑客破解版（Xi团队破解）",
+    function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eksan966/Sword_Guest/refs/heads/main/VIP"))()
+    end
+)
+
 FE:Button("水滴注入器", function()
 --[[
 	警告:小心！此脚本未经ScriptBlox验证。使用风险自担！
@@ -2772,6 +2781,13 @@ LOlTab3:Button(
         fox:FireServer("FoxCharacter")
     end
 )
+
+
+
+
+LOlTab999:Button("空云制作",function()
+loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/Wind/sb/鱼.lua", true))()
+end)
 
 
 
