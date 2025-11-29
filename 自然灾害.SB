@@ -1,4 +1,3 @@
-loadstring(game:HttpGet("https://github.com/IlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIl/IlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIl/raw/main/防抓包.lua", true))()
 game:GetService("StarterGui"):SetCore("SendNotification", {
   Title = "空云脚本V3",
   Text = "欢迎使用空云脚本",
