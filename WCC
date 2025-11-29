@@ -10,45 +10,79 @@ local WhitelistBlacklist = {
     
     -- 黑名单（禁止使用的用户）
     Blacklist = {
-        "Cheater1",
-        "KMTK77",
+        "KMtK77",
+        "HackerUser",
         -- 在这里添加黑名单用户
     }
 }
 
--- 获取当前玩家用户名
-local playerName = game.Players.LocalPlayer.Name
-
--- 验证函数
-local function CheckAccess()
-    -- 检查黑名单
-    for _, blacklistedUser in ipairs(WhitelistBlacklist.Blacklist) do
-        if playerName == blacklistedUser then
-            game.Players.LocalPlayer:Kick("❌ 你是黑名单用户，禁止使用此脚本！")
+-- 安全验证函数
+local function SafeCheckAccess()
+    local success, errorMsg = pcall(function()
+        -- 获取当前玩家
+        local players = game:GetService("Players")
+        local player = players.LocalPlayer
+        
+        if not player then
             return false
         end
-    end
-    
-    -- 检查白名单
-    for _, whitelistedUser in ipairs(WhitelistBlacklist.Whitelist) do
-        if playerName == whitelistedUser then
-            return true  -- 白名单用户，允许访问
+        
+        local playerName = player.Name
+        
+        -- 检查黑名单
+        for _, blacklistedUser in ipairs(WhitelistBlacklist.Blacklist) do
+            if playerName == blacklistedUser then
+                player:Kick("❌ 你是黑名单用户，禁止使用此脚本！")
+                return false
+            end
         end
+        
+        -- 检查白名单
+        for _, whitelistedUser in ipairs(WhitelistBlacklist.Whitelist) do
+            if playerName == whitelistedUser then
+                return true  -- 白名单用户，允许访问
+            end
+        end
+        
+        -- 既不在白名单也不在黑名单
+        player:Kick("❌ 你没有白名单权限，无法使用此脚本！")
+        return false
+    end)
+    
+    if not success then
+        warn("验证系统错误: " .. tostring(errorMsg))
+        -- 如果验证系统出错，默认允许访问（或者可以根据需要修改）
+        return true
     end
     
-    -- 既不在白名单也不在黑名单
-    game.Players.LocalPlayer:Kick("❌ 你没有白名单权限，无法使用此脚本！")
     return false
 end
 
--- 执行验证
-if not CheckAccess() then
-    return  -- 停止执行脚本
+-- 延迟执行验证，确保游戏完全加载
+local function DelayedVerification()
+    -- 等待游戏完全加载
+    repeat wait(1) until game:IsLoaded()
+    
+    -- 等待玩家加载
+    local player = game.Players.LocalPlayer
+    repeat wait(1) until player and player.Character
+    
+    -- 执行验证
+    if not SafeCheckAccess() then
+        return
+    end
+    
+    -- 验证通过，继续加载脚本
+    print("✅ 白名单验证通过！欢迎使用空云脚本")
+    
+    -- 这里开始你的主脚本内容
+    LoadMainScript()
 end
 
--- 如果验证通过，继续加载主脚本
-print("✅ 白名单验证通过！欢迎使用空云脚本")
-
+-- 主脚本加载函数
+function LoadMainScript()
+    -- 这里放置你原有的所有脚本内容
+print("开始加载主脚本...")
 game:GetService("StarterGui"):SetCore("SendNotification", {
   Title = "空云脚本V3",
   Text = "欢迎使用空云脚本",
@@ -10633,4 +10667,5 @@ notifications:notify{
             },
             Length = 30
         }
-       
+
+spawn(DelayedVerification)
