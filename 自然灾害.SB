@@ -265,6 +265,16 @@ local function ToggleESP(state)
     end
 end
 ----------------------------------------------------------------------------------------------------------------------------------------
+LOL:Label("=== 『节日倒计时』（剩余天数） ===")
+LOL:Label("离元旦还有: "..getDayCountdown(1, 1).."天")
+LOL:Label("离春节还有: "..getDayCountdown(2, 10).."天") -- 2025年公历日期
+LOL:Label("离情人节还有: "..getDayCountdown(2, 14).."天")
+LOL:Label("离清明节还有: "..getDayCountdown(4, 4).."天")
+LOL:Label("离劳动节还有: "..getDayCountdown(5, 1).."天")
+LOL:Label("离端午节还有: "..getDayCountdown(5, 31).."天") -- 2025年公历日期
+LOL:Label("离中秋节还有: "..getDayCountdown(9, 17).."天") -- 2025年公历日期
+LOL:Label("离国庆节还有: "..getDayCountdown(10, 1).."天")
+LOL:Label("离圣诞节还有: "..getDayCountdown(12, 25).."天")
 LOL:Label("缝合更新")
 LOL:Label("你的注入器:"..identifyexecutor())
 LOL:Label("当前服务器ID:" .. game.GameId .. " ")
