@@ -32,67 +32,68 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
   Button2 = "谢谢使用",
 })
 
-print("用户界面库正在加载！")
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/renlua/block/main/UI/%E5%BD%A9%E8%99%B9UI.lua", true))()
-print("用户界面库加载成功！")
 ----------------------------------------------------------------------------------------------------------------------------------------
 local window = library:new("空云脚本V3")--V2.1.3
 ----------------------------------------------------------------------------------------------------------------------------------------
-local main = window:Tab("主要的", "17493876383")--1
-local amusement = window:Tab("娱乐", "17493876383")--1
-local SettingsTab = window:Tab("设置", "6034509993")--2
-local CNScript = window:Tab("脚本中心", "6031302918")--3
-local FEScript = window:Tab("FE", "6022668955")--4
-local buildaship = window:Tab("造船寻宝", "6031097229")--5
-local Natural = window:Tab("自然灾害生存", "6031097229")--6
-local prison = window:Tab("监狱人生", "6031097229")--7
-local ninja = window:Tab("忍者传奇", "6031097229")--8
-local shark = window:Tab("鲨口生求 1＆2", "6031097229")--9
-local speed = window:Tab("极速传奇", "6031097229")--10
-local force = window:Tab("力量传奇", "6031097229")--11
-local hunt = window:Tab("寻宝模拟器", "6031097229")--12
-local breaks = window:Tab("Break in 1＆2", "6031097229")--13二个服务器
-local Field = window:Tab("Field Trip Z", "6031097229")--14
-local TheRake = window:Tab("The Rake", "6031097229")--15
-local Evade = window:Tab("Evade", "6031097229")--16
-local destroyer = window:Tab("破坏者谜团", "6031097229")--17
-local FM1 = window:Tab("伐木大亨2", "6031097229")--18
-local Blade = window:Tab("刀刃球", "6031097229")--19
-local TDS = window:Tab("TDS&TDX", "6031097229")--20二个服务器
-local DOORSHUB = window:Tab("DOORS", "6031067241")--21
-local bruh = window:Tab("一路向西", "6031097229")--22
-local china = window:Tab("河北唐县", "5012544693")--23
-local palm = window:Tab("巴掌大战", "6031097229")--24
-local magic = window:Tab("法宝模拟器", "6031097229")--25
-local RNG = window:Tab("sol'RNG", "6031097229")--26
-local Wartycoon = window:Tab("战争大亨", "6031097229")--27
-local strength = window:Tab("超级大力士模拟器", "6031097229")--28
+local main = window:Tab("『主要的』", "17493876383")--1
+local main9178 = window:Tab(『"黑客入侵无需后门』", "17493876383")--1
+local amusement = window:Tab("『娱乐』", "17493876383")--1
+local SettingsTab = window:Tab("『设置』", "6034509993")--2
+local CNScript = window:Tab("『脚本中心』", "6031302918")--3
+local FEScript = window:Tab("『FE』", "6022668955")--4
+local buildaship = window:Tab("『造船寻宝』", "6031097229")--5
+local buildashie = window:Tab("『鱼』", "6031097229")--5
+local buildashic = window:Tab("『把火车开到终点』", "6031097229")--5
+local Natural = window:Tab("『自然灾害生存』", "6031097229")--6
+local prison = window:Tab("『监狱人生』", "6031097229")--7
+local ninja = window:Tab("『忍者传奇』", "6031097229")--8
+local shark = window:Tab("『鲨口生求 1＆2』", "6031097229")--9
+local speed = window:Tab("『极速传奇』", "6031097229")--10
+local force = window:Tab("『力量传奇』", "6031097229")--11
+local hunt = window:Tab("『寻宝模拟器』", "6031097229")--12
+local breaks = window:Tab("『Break in 1＆2』", "6031097229")--13二个服务器
+local Field = window:Tab("『Field Trip Z』", "6031097229")--14
+local TheRake = window:Tab("『The Rake』", "6031097229")--15
+local Evade = window:Tab("『Evade』", "6031097229")--16
+local destroyer = window:Tab("『破坏者谜团』", "6031097229")--17
+local FM1 = window:Tab("『伐木大亨2』", "6031097229")--18
+local Blade = window:Tab("『刀刃球』", "6031097229")--19
+local TDS = window:Tab("『TDS&TDX』", "6031097229")--20二个服务器
+local DOORSHUB = window:Tab("『DOORS』", "6031067241")--21
+local bruh = window:Tab("『一路向西』", "6031097229")--22
+local china = window:Tab("『河北唐县』", "5012544693")--23
+local palm = window:Tab("『巴掌大战』", "6031097229")--24
+local magic = window:Tab("『法宝模拟器』", "6031097229")--25
+local RNG = window:Tab("『sol'RNG』", "6031097229")--26
+local Wartycoon = window:Tab("『战争大亨』", "6031097229")--27
+local strength = window:Tab("『超级大力士模拟器』", "6031097229")--28
 local rainbow = window:Tab("彩虹朋友", "6031097229")--29
-local Snow = window:Tab("铲雪模拟器", "6031097229")--30
-local zombie = window:Tab("进攻的僵尸", "6031097229")--31
-local strongest = window:Tab("最强战场", "6031097229")--32
-local vividness = window:Tab("动感星期五", "6031097229")--33
-local infectious = window:Tab("感染性微笑", "6031097229")--34
-local bfand = window:Tab("bf", "6031097229")--35
-local LLL = window:Tab("内脏与黑火药", "6031097229")--36
-local LLLL = window:Tab("披萨店", "6035121914")--37
-local l3008l = window:Tab("3008", "6031097229")--38
-local pig = window:Tab("恐怖小猪", "6031097229")--39
-local pqkao = window:Tab("幸运方块大乱斗", "6031097229")--40
-local FULLMOVIE = window:Tab("住宅大屠杀", "6031097229")--41
-local aaakqnja = window:Tab("蜂群模拟器", "6031097229")--41
-local Akmala = window:Tab("露营1-3", "6031097229")--42三个服务器
-local AJHAKAB = window:Tab("举重模拟器", "6031097229")--43
-local AJBAKQJ = window:Tab("俄亥俄州", "6031097229")--44
-local AJBAKAN = window:Tab("钓鱼模拟器", "6031097229")--45
-local AJBAKAA = window:Tab("最强拳击模拟器", "6031097229")--46
-local AJBAKAP = window:Tab("小偷模拟器", "6031097229")--47
-local AJBAKAL = window:Tab("越狱", "6031097229")--48
-local jwjaknj = window:Tab("火箭发射模拟器", "6031097229")--50
-local jwjakn = window:Tab("怪兽宇宙", "6031097229")--51
-local jwjak = window:Tab("战斗勇士", "6031097229")--52   共57
-local jwja = window:Tab("逃离建筑", "6031097229")--53   共59
-local AJAKAK = window:Tab("兵工厂", "6031097229")
+local Snow = window:Tab("『铲雪模拟器』", "6031097229")--30
+local zombie = window:Tab("『进攻的僵尸』", "6031097229")--31
+local strongest = window:Tab("『最强战场』", "6031097229")--32
+local vividness = window:Tab("『动感星期五』", "6031097229")--33
+local infectious = window:Tab("『感染性微笑』", "6031097229")--34
+local bfand = window:Tab("『bf』", "6031097229")--35
+local LLL = window:Tab("『内脏与黑火药』", "6031097229")--36
+local LLLL = window:Tab("『披萨店』", "6035121914")--37
+local l3008l = window:Tab("『3008』", "6031097229")--38
+local pig = window:Tab("『恐怖小猪』", "6031097229")--39
+local pqkao = window:Tab("『幸运方块大乱斗』", "6031097229")--40
+local FULLMOVIE = window:Tab("『住宅大屠杀』", "6031097229")--41
+local aaakqnja = window:Tab("『蜂群模拟器』", "6031097229")--41
+local Akmala = window:Tab("『露营1-3』", "6031097229")--42三个服务器
+local AJHAKAB = window:Tab("『举重模拟器』", "6031097229")--43
+local AJBAKQJ = window:Tab("『俄亥俄州』", "6031097229")--44
+local AJBAKAN = window:Tab("『钓鱼模拟器』", "6031097229")--45
+local AJBAKAA = window:Tab("『最强拳击模拟器』", "6031097229")--46
+local AJBAKAP = window:Tab("『小偷模拟器』", "6031097229")--47
+local AJBAKAL = window:Tab("『越狱』", "6031097229")--48
+local jwjaknj = window:Tab("『火箭发射模拟器』", "6031097229")--50
+local jwjakn = window:Tab("『怪兽宇宙』", "6031097229")--51
+local jwjak = window:Tab("『战斗勇士』", "6031097229")--52   共57
+local jwja = window:Tab("『逃离建筑』", "6031097229")--53   共59
+local AJAKAK = window:Tab("『兵工厂』", "6031097229")
 print("🔘功能-加载成功！")
 ----------------------------------------------------------------------------------------------------------------------------------------
 local LOL = main:section("关于脚本信息", false)
@@ -100,11 +101,12 @@ local AKAJK = main:section("玩家", false)
 local Player = main:section("通用", false)
 local teles = main:section("ESP", false)
 local teleports = main:section("传送带️", false)
+local teleporte = main9178:section("️合集", false)
 local chat = amusement:section("破解违禁词方法", false)
 local SETUP = SettingsTab:section("游戏设置", false)
 local SETU = SettingsTab:section("画质设置", false)
 local set = SettingsTab:section("UI设置和自定义",false)
-local CNA = CNScript:section("小光制作", false)
+local CNA = CNScript:section("空云制作", false)
 local CNS = CNScript:section("其他国外脚本", false)
 local CN = CNScript:section("其他国内脚本", false)
 local AQ = CNScript:section("收费国内脚本『破解』", false)
@@ -114,6 +116,9 @@ local Tab2 = Natural:section("脚本中心", true)
 local Tab3 = buildaship:section("主要的", true)
 local fakeTab3 = buildaship:section("脚本", true)
 local LOlTab3 = buildaship:section("角色", true)
+local LOlTab999 = buildashie:section("脚本", true)
+local LOlTab998 = buildashic:section("生成火车", true)
+local LOlTab997 = buildashic:section("崩服", true)
 local MainTab4 = prison:section("主要的", true)
 local cnTab4 = prison:section("脚本", true)
 local deliverTab4 = prison:section("传送地图🗺️", true)
@@ -260,14 +265,14 @@ local function ToggleESP(state)
     end
 end
 ----------------------------------------------------------------------------------------------------------------------------------------
+LOL:Label("缝合更新")
 LOL:Label("你的注入器:"..identifyexecutor())
 LOL:Label("当前服务器ID:" .. game.GameId .. " ")
 LOL:Label("你的用户名" .. game.Players.LocalPlayer.Name .. " ")
-LOL:Label("空云脚本V3的创作者空云 QQ3126295205")
-LOL:Label("后续会继续添加脚本，不会停更。由于找的外国脚本可能存在不兼容的问题，请见谅")
-LOL:Label("空云脚本群号942272935")
+LOL:Label("空云脚本的创作者空云 QQ3126295205")
+LOL:Label("空云脚本1群号942272935")
 LOL:Button(
-    "复制到空云脚本①群号（如果找不到）",
+    "复制到空云脚本①群号",
     function()
         setclipboard("942272935")
     end
@@ -631,7 +636,7 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(242, 60, 255)
 TextLabel.Position = UDim2.new(0.469327301, 0, 0, 0)
 TextLabel.Size = UDim2.new(0, 100, 0, 28)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "飞行[小光二改]"
+TextLabel.Text = "飞行[空云二改]"
 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
@@ -718,8 +723,8 @@ local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
 nowe = false
 
 game:GetService("StarterGui"):SetCore("SendNotification", { 
-	Title = "飞行小光二改";
-	Text = "支持作者小光";
+	Title = "飞行空云二改";
+	Text = "支持作者空云";
 	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
 Duration = 5;
 
@@ -1500,6 +1505,10 @@ teleports:Button("刷新列表", function()
     teleports:SetOptions(AllPlayers)
 end)
 
+teleporte:Button("极品",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/c00kidd+1x1x1.LUA", true))()
+end)
+
 chat:Button("聊天黄油",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/UWU/main/%E7%A0%B4%E8%A7%A3%E8%BF%9D%E7%A6%81%E8%AF%8D%E6%96%B9%E6%B3%95.lua", true))()
 end)
@@ -1808,8 +1817,7 @@ set:Toggle("移除UI辉光", "", false, function(state)
             ToggleUILib()
         end)
 
-CNA:Label("不知道哪个脚本，请联系QQ168777105")
-CNA:Label("脚本启动不出来等问题，必须删除")
+CNA:Label("不知道哪个脚本，请联系QQ3126295205")
 CNS:Button(
     "脚本中心",
     function()
@@ -1830,15 +1838,15 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/
     end
 )
 CN:Button(
-    "星空脚本",
+    "叶脚本",
     function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/UWU/main/%E5%85%B6%E4%BB%96%E5%9B%BD%E5%86%85%E8%84%9A%E6%9C%AC/%E6%98%9F%E7%A9%BA%E8%84%9A%E6%9C%AC/MoonSecV3.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/roblox-ye/QQ515966991/refs/heads/main/ROBLOX-YE-SCRIPT-XIAOYE.lua"))()
     end
 )
 CN:Button(
-    "林脚本",
+    "光脚本",
     function()
-lin = "作者林"lin ="林QQ群 747623342"loadstring(game:HttpGet("https://raw.githubusercontent.com/linnblin/lin/main/lin"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/qwrt5589/eododo/018ff5d13517b365d1cc169b2c01f373a4c12970/guang.txt"))()
     end
 )
 CN:Button(
@@ -1860,11 +1868,11 @@ jianke__V4 = "作者QQ1412152634"
 jianke___V4 = "剑客QQ群347724155"
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/JianKeCX/JianKeV4/main/ChuXia')))()
 end)
-CN:Button("呱鸡脚本（小光已经帮修复）", function()
+CN:Button("呱鸡脚本（空云已经帮修复）", function()
       loadstring(game:HttpGet("https://pastebin.com/raw/MRgmQkUy", true))()
 end)
-CN:Button("☁空云脚本V3☁", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/LOL/main/%E4%BA%91%E8%84%9A%E6%9C%ACCloud%20script.lua", true))() 
+CN:Button("空云脚本V2", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/空云脚本V2.LUA",true))()
 end)
 
 CN:Button("鲨脚本", function()
@@ -1876,11 +1884,7 @@ CN:Button("USA脚本", function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/beta/main/USA.lua"))()
 end)
       
-CN:Button("龙脚本", function()
-        getgenv().long = "龙脚本，加载时间长请耐心"loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\108\121\121\97\105\110\105\47\108\111\110\47\109\97\105\110\47\108\105\115\119\109\34\41\41\40\41")() 
-end)
- 
- 
+
 CN:Button("冰脚本", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/GR4ChWKv"))() 
 end)
@@ -1889,7 +1893,7 @@ CN:Button("河流脚本", function()
       loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\77\50\57\77\117\81\115\80"))()
 end)
       
-CN:Button("BS脚本（偷空云脚本V3）", function()
+CN:Button("BS脚本（偷云脚本）", function()
       loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,71,57,103,117,122,88,100,75})end)())))()--BS
 end)
      
@@ -2136,7 +2140,14 @@ game.Players.LocalPlayer.UserId = playid
 
 getgenv().FH = "鱼龙脚本"loadstring(game:HttpGet(string.char(104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,102,50,48,105,51,48,115,52,48,104,47,70,72,47,109,97,105,110,47,70,72,46,108,117,97)))()
 end)]]
-AQ:Label("有没有收费其他脚本，请加小光QQ168777105")
+AQ:Label("有没有收费其他脚本，请加空云QQ316295205")
+AQ:Button(
+    "剑客破解版（Xi团队破解）",
+    function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eksan966/Sword_Guest/refs/heads/main/VIP"))()
+    end
+)
+
 FE:Button("水滴注入器", function()
 --[[
 	警告:小心！此脚本未经ScriptBlox验证。使用风险自担！
@@ -2327,7 +2338,7 @@ Aoajlak:Button("产卵塔",function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-280, 170, 341, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 end)
 Tab2:Button(
-    "空云脚本V3高级脚本",
+    "空云脚本高级脚本",
     function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/IlIIIIIIIIIIIIIIIIllll/IIIlllllIIIIIIlllllllllllllllllllllllllllllllllllllllllIIllIIIlllllIIIIIIl/main/KAKANAKAAL/AIKAAOKA---------------JSHAKABALAOALAPALAALOAJAHAWJWBAKABAJANAKABKABWJWNA.LUA", true))()
     end
@@ -2777,6 +2788,41 @@ LOlTab3:Button(
 
 
 
+LOlTab999:Button("空云制作",function()
+loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/Wind/sb/鱼.lua", true))()
+end)
+
+
+
+
+LOlTab998:Button("生成Expreso火车",function()
+game:GetService("ReplicatedStorage").SpawnTrenExpreso:FireServer()
+end)
+LOlTab998:Button("生成例车",function()
+game:GetService("ReplicatedStorage").SpawnTrenAve:FireServer()
+end)
+LOlTab998:Button("生成四节火车",function()
+game:GetService("ReplicatedStorage").SpawnTrenUnderground:FireServer()
+end)
+LOlTab998:Button("生成运货火车",function()
+game:GetService("ReplicatedStorage").SpawnTrenContainer:FireServer()
+end)
+LOlTab998:Button("生成手推车",function()
+game:GetService("ReplicatedStorage").SpawnTrenPalanca:FireServer()
+end)
+LOlTab997:Button("无限循环(不卡死)",function()
+while true do
+game:GetService("ReplicatedStorage").SpawnTrenUnderground:FireServer()
+task.wait()
+end
+end)
+LOlTab997:Button("(卡死)",function()
+while true do game:GetService("ReplicatedStorage").SpawnTrenUnderground:FireServer() end
+end)
+
+
+
+
 local isAutoKillRunning = false -- 变量来跟踪自动终止循环的状态
         local function AutoKillLoop()
             while isAutoKillRunning do
@@ -2827,7 +2873,7 @@ MainTab4:Toggle("开启杀戮气场","state",false,function(s)
 States.KillAura = state
         if state then
             notifications:notify{
-            Title = "空云脚本V3中心",
+            Title = "空云脚本",
             Description = "关闭杀戮气场",
             Icon = 6031302918,
             Accept = {
@@ -2841,7 +2887,7 @@ States.KillAura = state
             CreateKillPart()
         else
             notifications:notify{
-            Title = "空云脚本V3中心",
+            Title = "空云脚本",
             Description = "开启杀戮气场",
             Icon = 6031302918,
             Accept = {
@@ -3289,32 +3335,6 @@ end)
 QPKQ:Button("飞行",function()
 loadstring(game:HttpGet("https://pastebin.com/raw/gqv7PXAa"))()
 end)
-Tab77:Label("通知↓左上角看就行")
-Tab77:Button(
-    "空云脚本V3V2",
-    function()
-        loadstring(
-            game:HttpGet(
-                "https://raw.githubusercontent.com/XiaoYunCN/Cloud-script/main/%E6%B8%B8%E6%88%8F/%E6%9E%81%E9%80%9F%E4%BC%A0%E5%A5%87V2.lua",
-                true
-            )
-        )()
-        CoreGui:SetCore(
-            "SendNotification",
-            {
-                Title = "⚠️注意！",
-                Text = "左上角！",
-                Duration = 30
-            }
-        )
-    end
-)
-Tab77:Button(
-    "空云脚本V3V1",
-    function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/CloudX-ScriptsWane/ScriptsDache/main/7.lua"))()
-    end
-)
 
 LTab7:Button(
     "开启卡宠",
@@ -4307,16 +4327,6 @@ end
 end)
 
 Tab8:Button(
-    "空云脚本V3V2.1",
-    function()
-        loadstring(
-            game:HttpGet(
-                "https://raw.githubusercontent.com/CloudX-ScriptsWane/ScriptsDache/main/%E5%8A%9B%E9%87%8FV2.1.lua"
-            )
-        )()
-    end
-)
-Tab8:Button(
     "脚本老版本",
     function()
         loadstring(
@@ -4394,7 +4404,7 @@ end)
 
 local Tab9 = hunt:section("脚本", true)
 Tab9:Button(
-    " [小光制作]",
+    " [空云制作]",
     function()
         loadstring(
             game:HttpGet(
@@ -4446,7 +4456,7 @@ Tab10:Button(
     end
 )
 Tab10:Button(
-    "最强空云脚本V3中心",
+    "最强空云脚本",
     function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/UWU/main/i.lua", true))()
     end
@@ -4662,13 +4672,13 @@ Tab17:Button(
     end
   else
     notifications:notify{
-            Title = "空云脚本V3中心",
+            Title = "空云脚本",
             Description = "这个剧本是为刀刃球脚本游戏准备的",
             Icon = 17493876383,
             Accept = {
                 Text = "好的",
                 Callback = function()
-                    print("小光:D")
+                    print("空云:D")
                 end
             },
             Length = 5
@@ -7084,7 +7094,7 @@ ESP.Names = false
 -- notify function
 local function notify(message)
     game.StarterGui:SetCore("SendNotification", {
-        Title = "空云脚本V3中心";
+        Title = "空云脚本";
         Text = message;
         Icon = "";
         Duration = 5;
@@ -7155,7 +7165,7 @@ end)
 xlolx:Button("云小猪脚本",function()
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/eKwyeQa0", true))()
 
-local tab1 = library:CreateTab("  空云脚本V3中心", true)
+local tab1 = library:CreateTab("  空云脚本", true)
 local button = library:MakeButton(tab1,"启动",function(button)
  
 _G.GodMode = true
@@ -7575,7 +7585,7 @@ end)
 ALQKNA:Button("打开商店",function()
 game:GetService("Players").LocalPlayer.PlayerGui["Main_Gui"]["UpgradeMenu_Frame"].Visible = true
 end)
-JABAJA:Toggle("空云脚本V3中心","text",false,function(s)
+JABAJA:Toggle("空云脚本","text",false,function(s)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/Cloud-script/main/%E6%B8%B8%E6%88%8F/%E4%BF%84%E4%BA%A5%E4%BF%84%E5%B7%9E.lua",true))()
 end)
 JABAJA:Toggle("自动抢银行","text",false,function(v)
@@ -7978,9 +7988,9 @@ function TPCFrame(Player_CFrame)
     end
 
 -- 添加其他功能函数
-Jan:Button("空云脚本V3中心",function()
+Jan:Button("空云脚本",function()
 --[[
-    空云脚本V3 THIEF LIFE SIMULATOR SOURCE
+    空云脚本 THIEF LIFE SIMULATOR SOURCE
 
     It should be noted that this script is rather messy and not recommended for learning off because it is many months old and my first script hub ever.
     V2 is being developed, and now that I've had six months of experience with lua, I can create a much better script hub.
@@ -7993,7 +8003,7 @@ Jan:Button("空云脚本V3中心",function()
 --------------------------------------------------------------------------------------R3THPRIV----------------------------------------------------------------------------------------
 repeat wait() until game:IsLoaded()
 
-print("[ 空云脚本V3 ]: 空云脚本V3 THIEF LIFE SIMULATOR LOADING...")
+print("[ 空云脚本 ]: 空云脚本 THIEF LIFE SIMULATOR LOADING...")
 
 --------------------------------------------------------------------------------------THEME----------------------------------------------------------------------------------------
 privateProperties = {
@@ -8453,17 +8463,17 @@ Game:addToggle("RTX着色器", false, function(rtxshaders)
     end
     if rtxshaders == false then
         for i,v in pairs(game.Lighting:GetChildren()) do
-            if v.Name == "[ 空云脚本V3 ]: 日落" then
+            if v.Name == "[ 空云脚本 ]: 日落" then
                 v:Destroy()
-            elseif v.Name == "[ 空云脚本V3 ]: 花" then
+            elseif v.Name == "[ 空云脚本 ]: 花" then
                 v:Destroy()
-            elseif v.Name == "[ 空云脚本V3 ]: 伊那里泰莎" then
+            elseif v.Name == "[ 空云脚本 ]: 伊那里泰莎" then
                 v:Destroy()
-            elseif v.Name == "[ 空云脚本V3 ]: 简单" then
+            elseif v.Name == "[ 空云脚本 ]: 简单" then
                 v:Destroy()
-            elseif v.Name == "[ 空云脚本V3 ]: 阳光" then
+            elseif v.Name == "[ 空云脚本 ]: 阳光" then
                 v:Destroy()
-            elseif v.Name == "[ 空云脚本V3 ]: 高山" then
+            elseif v.Name == "[ 空云脚本 ]: 高山" then
                 v:Destroy()
             end
         end
@@ -8829,7 +8839,7 @@ Target:addToggle("杀死宠物", false, function(killpet)
                 game:GetService("ReplicatedStorage").Events.Weapon.RequestHit:FireServer(workspace.Pets[playertarget .."_PET"])
             else
                 Notification:Notify(
-                    {Title = "空云脚本V3", Description = "玩家没有装备宠物"},
+                    {Title = "空云脚本", Description = "玩家没有装备宠物"},
                     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
                 )
                 killpetloop = false
@@ -8977,18 +8987,18 @@ Credits:addButton("pethicial", function()
 end)
 
 --------------------------------------------------------------------------------------LOAD----------------------------------------------------------------------------------------
-print("[ 空云脚本V3 ]: 成功加载脚本！")
+print("[ 空云脚本 ]: 成功加载脚本！")
 R3TH:SelectPage(R3TH.pages[1], true)
 sendnotification("成功加载脚本！")
 
 local StarterGui = game:GetService("StarterGui")
 StarterGui:SetCore("SendNotification", {
-    Title = "空云脚本V3";
+    Title = "空云脚本";
     Text = "欢迎你";
     Duration = 10;
 }) 
 end)
-Java:Button("空云脚本V3中心",function()
+Java:Button("空云脚本",function()
 -- main boot ui
 local Players = game:GetService('Players');
 local localplayer = Players.LocalPlayer;
@@ -8998,20 +9008,20 @@ local Library = loadstring(game:HttpGet(("https://raw.githubusercontent.com/Hexe
 local JBENGINE = loadstring(game:HttpGet('https://raw.githubusercontent.com/MrolivesGaming/HexHub/main/GAMES/JAILBREAK/JB-ENGINE.lua'))()
 local JB_NOTIFICATIONS = require(game:GetService("ReplicatedStorage").Game.Notification)
 Library:Notify({
-	Title = "空云脚本V3中心",
+	Title = "空云脚本",
 	Content = "客户端脚本是最新的！",
 	Duration = 6.5,
 	Image = 1134693820,
 })
 
 JB_NOTIFICATIONS.new({
-	Text = "启动空云脚本V3中心，这可能需要一段时间！",
+	Text = "启动空云脚本，这可能需要一段时间！",
 	Duration = 2
 })
 
 local Sense = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Sirius/request/library/sense/source.lua'))()
 local Window = Library:CreateWindow({
-	Name = "空云脚本V3中心-越狱",
+	Name = "空云脚本-越狱",
 	ConfigurationSaving = {
 		Enabled = true,
 		FolderName = "CARMLWARE_SAVED_DATA", -- 为你的中枢/游戏创建一个自定义文件夹
@@ -9475,11 +9485,11 @@ end)
 
 
 JB_NOTIFICATIONS.new({
-	Text = "空云脚本V3中心已成功启动，尽情享受吧！",
+	Text = "空云脚本已成功启动，尽情享受吧！",
 	Duration = 2
 })
 end)
-Java:Label("↑是不是BUG，有找小光")
+Java:Label("↑是不是BUG，有找空云")
 Java:Button("脚本",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Splooshhy/PantherHub/main/main/sexy/script.lua"))()-- KEY DISCORD : https://discord.gg/aZzGyx2W4k
 end)
@@ -10533,7 +10543,7 @@ end)
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/IlIIIIIIIIIIIIIIIIllll/IIIlllllIIIIIIlllllllllllllllllllllllllllllllllllllllllIIllIIIlllllIIIIIIl/main/%E5%8E%9F%E7%89%88.lua", true))()
 print("ui library加载成功！")
 ----------------------------------------------------------------------------------------------------------------------------------------
-local window = library:new("空云脚本V3中心 V2.1.2")
+local window = library:new("空云脚本 V2.1.2")
 ----------------------------------------------------------------------------------------------------------------------------------------
 local main = window:Tab("主要的", "17493876383")
 local Tab = main:section("关于脚本信息", true)
@@ -10561,7 +10571,7 @@ end)
 Tab:Label("通知")
 ]]
 notifications:notify{
-            Title = "空云脚本V3中心",
+            Title = "空云脚本",
             Description = "已启用反挂机",
             Icon = 6031302918,
             Accept = {
