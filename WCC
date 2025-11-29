@@ -1,29 +1,91 @@
-local function loadBlack()
-    local result = game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/Wind%2Fsb%2F%E9%BB%91%E5%90%8D%E5%8D%95.LUA")
-    return loadstring(result)() or {}
+-- 白名单和黑名单验证系统
+local WhitelistBlacklist = {
+    -- 白名单（允许使用的用户）
+    Whitelist = {
+        "XiaoYunCN",  -- 你的用户名
+        "AdminUser1",  -- 其他管理员
+        "TrustedUser2",
+        -- 在这里添加更多白名单用户
+    },
+    
+    -- 黑名单（禁止使用的用户）
+    Blacklist = {
+        "KMtK77",
+        "HackerUser",
+        -- 在这里添加黑名单用户
+    }
+}
+
+-- 安全验证函数
+local function SafeCheckAccess()
+    local success, errorMsg = pcall(function()
+        -- 获取当前玩家
+        local players = game:GetService("Players")
+        local player = players.LocalPlayer
+        
+        if not player then
+            return false
+        end
+        
+        local playerName = player.Name
+        
+        -- 检查黑名单
+        for _, blacklistedUser in ipairs(WhitelistBlacklist.Blacklist) do
+            if playerName == blacklistedUser then
+                player:Kick("❌ 你是黑名单用户，禁止使用此脚本！")
+                return false
+            end
+        end
+        
+        -- 检查白名单
+        for _, whitelistedUser in ipairs(WhitelistBlacklist.Whitelist) do
+            if playerName == whitelistedUser then
+                return true  -- 白名单用户，允许访问
+            end
+        end
+        
+        -- 既不在白名单也不在黑名单
+        player:Kick("❌ 你没有白名单权限，无法使用此脚本！")
+        return false
+    end)
+    
+    if not success then
+        warn("验证系统错误: " .. tostring(errorMsg))
+        -- 如果验证系统出错，默认允许访问（或者可以根据需要修改）
+        return true
+    end
+    
+    return false
 end
 
-local hwid_list = loadBlack()
-local hwidID = "未知"
-
-if gethwid then
-    hwidID = gethwid()
-else
-    hwidID = getDeviceFingerprint()
+-- 延迟执行验证，确保游戏完全加载
+local function DelayedVerification()
+    -- 等待游戏完全加载
+    repeat wait(1) until game:IsLoaded()
+    
+    -- 等待玩家加载
+    local player = game.Players.LocalPlayer
+    repeat wait(1) until player and player.Character
+    
+    -- 执行验证
+    if not SafeCheckAccess() then
+        return
+    end
+    
+    -- 验证通过，继续加载脚本
+    print("✅ 白名单验证通过！欢迎使用空云脚本")
+    
+    -- 这里开始你的主脚本内容
+    LoadMainScript()
 end
 
-if hwidID == "未知" then
-    game:GetService("Players").LocalPlayer:Kick("请更换注入器")
-    return
-end
-
-local cause = hwid_list[hwidID]
-if cause then
-    game:GetService("Players").LocalPlayer:Kick("\n你已被空云脚本拉黑\n原因："..cause.."\n如果你想解除封禁，联系QQ3126295205")
-    return
-end
-
-game:GetService("StarterGui"):SetCore("SendNotification", {
+-- 主脚本加载函数
+function LoadMainScript()
+    -- 这里放置你原有的所有脚本内容
+    print("开始加载主脚本...")
+    
+    -- 你原有的所有代码从这里开始...
+    game:GetService("StarterGui"):SetCore("SendNotification", {
   Title = "空云脚本V3",
   Text = "欢迎使用空云脚本",
   Duration = 4,
@@ -10606,5 +10668,9 @@ notifications:notify{
                 end
             },
             Length = 30
-        }
-       
+        }    
+    -- 继续你原有的代码...
+end
+
+-- 启动验证系统
+spawn(DelayedVerification)
