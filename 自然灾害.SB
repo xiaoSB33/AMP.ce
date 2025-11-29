@@ -68,6 +68,7 @@ local magic = window:Tab("『法宝模拟器』", "6031097229")--25
 local RNG = window:Tab("『sol'RNG』", "6031097229")--26
 local Wartycoon = window:Tab("『战争大亨』", "6031097229")--27
 local strength = window:Tab("『超级大力士模拟器』", "6031097229")--28
+local rainbow = window:Tab("彩虹朋友", "6031097229")--29
 local Snow = window:Tab("『铲雪模拟器』", "6031097229")--30
 local zombie = window:Tab("『进攻的僵尸』", "6031097229")--31
 local strongest = window:Tab("『最强战场』", "6031097229")--32
