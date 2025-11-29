@@ -1,5 +1,5 @@
 game:GetService("StarterGui"):SetCore("SendNotification", {
-  Title = "空云脚本V3(看到这个代表可以用)",
+  Title = "空云脚本V3",
   Text = "欢迎使用空云脚本",
   Duration = 4,
   Callback = bindable,
@@ -42,7 +42,6 @@ local amusement = window:Tab("『娱乐』", "17493876383")--1
 local SettingsTab = window:Tab("『设置』", "6034509993")--2
 local CNScript = window:Tab("『脚本中心』", "6031302918")--3
 local FEScript = window:Tab("『FE』", "6022668955")--4
-local MOSUN = window:Tab("『墨水游戏』", "6031302918")--3
 local buildaship = window:Tab("『造船寻宝』", "6031097229")--5
 local buildashie = window:Tab("『鱼』", "6031097229")--5
 local buildashic = window:Tab("『把火车开到终点』", "6031097229")--5
@@ -2156,13 +2155,6 @@ AQ:Button(
     "剑客破解版（Xi团队破解）",
     function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/eksan966/Sword_Guest/refs/heads/main/VIP"))()
-    end
-)
-
-MOSUNs:Button(
-    "空云脚本(卡密78)",
-    function()
-        loadstring(game:HttpGet("https://github.com/XiaoSB33/M416/raw/main/Wind/sb/墨水游戏.LUA"))()
     end
 )
 
