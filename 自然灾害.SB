@@ -41,7 +41,6 @@ local main9178 = window:Tab("黑客入侵无需后门", "17493876383")--1
 local amusement = window:Tab("娱乐", "17493876383")--1
 local SettingsTab = window:Tab("设置", "6034509993")--2
 local SettingsTab91 = window:Tab("获取罗宝", "6034509993")--2
-local SettingsTab78 = window:Tab("墨水游戏", "6034509993")--2
 local CNScript = window:Tab("脚本中心", "6031302918")--3
 local FEScript = window:Tab("FE", "6022668955")--4
 local buildaship = window:Tab("造船寻宝", "6031097229")--5
@@ -109,7 +108,6 @@ local SETUP = SettingsTab:section("游戏设置", false)
 local SETU = SettingsTab:section("画质设置", false)
 local set = SettingsTab:section("UI设置和自定义",false)
 local sets = SettingsTab91:section("获得r币",false)
-local setc = SettingsTab78:section("脚本",false)
 local CNA = CNScript:section("空云制作", false)
 local CNS = CNScript:section("其他国外脚本", false)
 local CN = CNScript:section("其他国内脚本", false)
@@ -1864,21 +1862,6 @@ sets:Button(
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/c00kidd+1x1x1.LUA",true))()
     end
 )
-
-
-setc:Button(
-    "空云制作卡密78",
-    function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/墨水游戏.LUA",true))()
-    end
-)
-setc:Button(
-    "汉化脚本",
-    function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/Ringta"))()
-    end
-)
-
 
 CNA:Label("不知道哪个脚本，请联系QQ3126295205")
 CNS:Button(
