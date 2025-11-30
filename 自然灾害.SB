@@ -43,7 +43,6 @@ local SettingsTab = window:Tab("设置", "6034509993")--2
 local CNScript = window:Tab("脚本中心", "6031302918")--3
 local FEScript = window:Tab("FE", "6022668955")--4
 local buildaship = window:Tab("造船寻宝", "6031097229")--5
-local meihua = window:Tab("美化", "6031097229")--5
 local buildashie = window:Tab("鱼", "6031097229")--5
 local buildashic = window:Tab("把火车开到终点", "6031097229")--5
 local Natural = window:Tab("自然灾害生存", "6031097229")--6
@@ -117,8 +116,6 @@ local Tab2 = Natural:section("脚本中心", true)
 local Tab3 = buildaship:section("主要的", true)
 local fakeTab3 = buildaship:section("脚本", true)
 local LOlTab3 = buildaship:section("角色", true)
-local LOlTab111 = meihua:section("r15区", true)
-local LOlTab112 = meihua:section("r6区", true)
 local LOlTab999 = buildashie:section("脚本", true)
 local LOlTab998 = buildashic:section("生成火车", true)
 local LOlTab997 = buildashic:section("崩服", true)
@@ -2787,22 +2784,6 @@ LOlTab3:Button(
         fox:FireServer("FoxCharacter")
     end
 )
-
-
-
-
-LOlTab111:Button("r15无头",function()
-loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/美化/r15无头", true))()
-end)
-LOlTab111:Button("r15无头",function()
-loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/美化/r15无腿", true))()
-end)
-LOlTab112:Button("r15无头",function()
-loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/美化/r6无头", true))()
-end)
-LOlTab112:Button("r15无头",function()
-loadstring(game:HttpGet("https://github.com/xiaoSB33/M416/raw/main/美化/r6无腿", true))()
-end)
 
 
 
