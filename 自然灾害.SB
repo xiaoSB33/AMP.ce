@@ -41,6 +41,7 @@ local main9178 = window:Tab("黑客入侵无需后门", "17493876383")--1
 local amusement = window:Tab("娱乐", "17493876383")--1
 local SettingsTab = window:Tab("设置", "6034509993")--2
 local SettingsTab91 = window:Tab("获取罗宝", "6034509993")--2
+local SettingsTab78 = window:Tab("墨水游戏", "6034509993")--2
 local CNScript = window:Tab("脚本中心", "6031302918")--3
 local FEScript = window:Tab("FE", "6022668955")--4
 local buildaship = window:Tab("造船寻宝", "6031097229")--5
@@ -1859,6 +1860,19 @@ sets:Button(
     "无限r币",
     function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/c00kidd+1x1x1.LUA",true))()
+    end
+)
+
+sets:Button(
+    "空云制作卡密78",
+    function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/墨水游戏.LUA",true))()
+    end
+)
+sets:Button(
+    "汉化脚本",
+    function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/Ringta"))()
     end
 )
 
