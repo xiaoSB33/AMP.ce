@@ -109,7 +109,7 @@ local SETUP = SettingsTab:section("游戏设置", false)
 local SETU = SettingsTab:section("画质设置", false)
 local set = SettingsTab:section("UI设置和自定义",false)
 local sets = SettingsTab91:section("获得r币",false)
-local setc = SettingsTab:section("UI设置和自定义",false)
+local setc = SettingsTab78:section("脚本",false)
 local CNA = CNScript:section("空云制作", false)
 local CNS = CNScript:section("其他国外脚本", false)
 local CN = CNScript:section("其他国内脚本", false)
@@ -1821,6 +1821,7 @@ set:Toggle("移除UI辉光", "", false, function(state)
             ToggleUILib()
         end)
         
+        
 sets:Button(
     "30r币",
     function()
@@ -1864,6 +1865,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/he
     end
 )
 
+
 setc:Button(
     "空云制作卡密78",
     function()
@@ -1876,6 +1878,7 @@ setc:Button(
 loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/Ringta"))()
     end
 )
+
 
 CNA:Label("不知道哪个脚本，请联系QQ3126295205")
 CNS:Button(
