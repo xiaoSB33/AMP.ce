@@ -1,12 +1,10 @@
+
 local StarterGui = game:GetService("StarterGui")
 local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
-local TweenService = game:GetService("TweenService")
 local API_ENDPOINT = "https://api.frost-system.com"
 local API_KEY = "frost-system-key"
-local KEY_VERIFICATION_ENDPOINT = "/key/verify"
-local KEY_ACTIVATION_ENDPOINT = "/key/activate"
-
+local WHITELIST_ENDPOINT = "/whitelist/verify"
 local function GetHardwareID()
     local success, result = pcall(function()
         return game:GetService("RbxAnalyticsService"):GetClientId()
@@ -18,7 +16,6 @@ local function GetHardwareID()
         return tostring(game:GetService("Players").LocalPlayer.UserId)
     end
 end
-
 local function GetIPAddress()
     local success, result = pcall(function()
         return game:HttpGet("http://api.ipify.org")
@@ -30,7 +27,6 @@ local function GetIPAddress()
         return "unknown"
     end
 end
-
 local function CopyToClipboard(text)
     local success = pcall(function()
         local clipboard = setclipboard or toclipboard or set_clipboard or (Clipboard and Clipboard.set)
@@ -64,219 +60,64 @@ local function APIRequest(endpoint, data)
     
     return nil
 end
-local function VerifyKey(key)
-    local response = APIRequest(KEY_VERIFICATION_ENDPOINT, {
-        key = key
-    })
-    
-    if response and response.success then
-        return response.valid
-    end
-    
-    return false
-end
-local function ActivateKey(key)
+local function IsWhitelisted(player)
     local hardwareID = GetHardwareID()
+    local username = player.Name
+    local ipAddress = GetIPAddress()
     
-    local response = APIRequest(KEY_ACTIVATION_ENDPOINT, {
-        key = key,
-        hardwareID = hardwareID
+    local response = APIRequest(WHITELIST_ENDPOINT, {
+        hardwareID = hardwareID,
+        username = username,
+        ipAddress = ipAddress
     })
     
     if response and response.success then
-        return response.activated
+        return response.whitelisted
     end
     
     return false
 end
-
-local function CreateSecureInputUI()
-    local localPlayer = Players.LocalPlayer
-    local playerGui = localPlayer:WaitForChild("PlayerGui")
-    
- 
-    local secureScreen = Instance.new("ScreenGui")
-    secureScreen.Name = "SecureKeyInput"
-    secureScreen.ResetOnSpawn = false
-    secureScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    
- 
-    local background = Instance.new("Frame")
-    background.Name = "Background"
-    background.Size = UDim2.new(1, 0, 1, 0)
-    background.BackgroundColor3 = Color3.new(0, 0, 0)
-    background.BackgroundTransparency = 0.3
-    background.Parent = secureScreen
-    
-  
-    local mainContainer = Instance.new("Frame")
-    mainContainer.Name = "MainContainer"
-    mainContainer.Size = UDim2.new(0, 400, 0, 300)
-    mainContainer.Position = UDim2.new(0.5, -200, 0.5, -150)
-    mainContainer.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
-    mainContainer.BorderSizePixel = 0
-    mainContainer.Parent = secureScreen
-    
-  
-    local title = Instance.new("TextLabel")
-    title.Name = "Title"
-    title.Size = UDim2.new(1, 0, 0, 50)
-    title.Position = UDim2.new(0, 0, 0, 0)
-    title.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
-    title.BorderSizePixel = 0
-    title.Text = "卡密验证"
-    title.TextColor3 = Color3.new(1, 1, 1)
-    title.TextScaled = true
-    title.Font = Enum.Font.GothamBold
-    title.Parent = mainContainer
-    
-  
-    local inputFrame = Instance.new("Frame")
-    inputFrame.Name = "InputFrame"
-    inputFrame.Size = UDim2.new(0.8, 0, 0, 40)
-    inputFrame.Position = UDim2.new(0.1, 0, 0.3, 0)
-    inputFrame.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
-    inputFrame.BorderSizePixel = 0
-    inputFrame.Parent = mainContainer
-    
-    local inputBox = Instance.new("TextBox")
-    inputBox.Name = "InputBox"
-    inputBox.Size = UDim2.new(1, 0, 1, 0)
-    inputBox.Position = UDim2.new(0, 0, 0, 0)
-    inputBox.BackgroundTransparency = 1
-    inputBox.Text = ""
-    inputBox.PlaceholderText = "请输入卡密"
-    inputBox.TextColor3 = Color3.new(1, 1, 1)
-    inputBox.TextScaled = true
-    inputBox.ClearTextOnFocus = false
-    inputBox.Parent = inputFrame
-    
-   
-    local verifyButton = Instance.new("TextButton")
-    verifyButton.Name = "VerifyButton"
-    verifyButton.Size = UDim2.new(0.6, 0, 0, 40)
-    verifyButton.Position = UDim2.new(0.2, 0, 0.6, 0)
-    verifyButton.BackgroundColor3 = Color3.new(0, 0.5, 1)
-    verifyButton.BorderSizePixel = 0
-    verifyButton.Text = "验证卡密"
-    verifyButton.TextColor3 = Color3.new(1, 1, 1)
-    verifyButton.TextScaled = true
-    verifyButton.Font = Enum.Font.GothamBold
-    verifyButton.Parent = mainContainer
-    
-
-    local statusText = Instance.new("TextLabel")
-    statusText.Name = "StatusText"
-    statusText.Size = UDim2.new(0.8, 0, 0, 40)
-    statusText.Position = UDim2.new(0.1, 0, 0.8, 0)
-    statusText.BackgroundTransparency = 1
-    statusText.Text = "请输入您的卡密进行验证"
-    statusText.TextColor3 = Color3.new(1, 1, 1)
-    statusText.TextScaled = true
-    statusText.Font = Enum.Font.Gotham
-    statusText.Parent = mainContainer
-    
-  
-    verifyButton.MouseButton1Click:Connect(function()
-        local key = inputBox.Text:gsub("%s+", "")
-        
-        if key == "" then
-            statusText.Text = "请输入有效的卡密"
-            statusText.TextColor3 = Color3.new(1, 0.5, 0)
-            return
-        end
-        
-        statusText.Text = "正在验证卡密..."
-        statusText.TextColor3 = Color3.new(1, 1, 0.5)
-        
-     
-        local isValid = VerifyKey(key)
-        
-        if isValid then
-            statusText.Text = "卡密验证成功，正在激活..."
-            statusText.TextColor3 = Color3.new(0.5, 1, 0.5)
-            
-         
-            local isActivated = ActivateKey(key)
-            
-            if isActivated then
-                statusText.Text = "卡密激活成功！正在启动脚本..."
-                statusText.TextColor3 = Color3.new(0, 1, 0)
-                
-             
-                local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-                local tween = TweenService:Create(mainContainer, tweenInfo, {BackgroundColor3 = Color3.new(0, 0.3, 0)})
-                tween:Play()
-                
-                wait(2)
-                secureScreen:Destroy()
-                
-                StarterGui:SetCore("SendNotification", {
-                    Title = "卡密验证成功",
-                    Text = "设备已绑定到卡密，正在启动脚本",
-                    Duration = 5
-                })
-            else
-                statusText.Text = "卡密激活失败，请联系管理员"
-                statusText.TextColor3 = Color3.new(1, 0, 0)
-            end
-        else
-            statusText.Text = "卡密无效或已过期"
-            statusText.TextColor3 = Color3.new(1, 0, 0)
-        end
-    end)
-    
-
-    local function protectUI()
-   
-        secureScreen.Archivable = false
-        
-   
-        for _, child in pairs(secureScreen:GetDescendants()) do
-            child.Archivable = false
-        end
-    end
-    
-    protectUI()
-    
-  
-    secureScreen.Parent = playerGui
-    
-    return secureScreen
-end
-
 local localPlayer = Players.LocalPlayer
 
 StarterGui:SetCore("SendNotification", {
-    Title = "正在检查授权",
+    Title = "正在检查白名单",
     Text = "正在验证设备权限...",
     Duration = 2
 })
 wait()
-local secureUI = CreateSecureInputUI()
-local timeout = 60 
-local startTime = tick()
-while secureUI.Parent and tick() - startTime < timeout do
-    wait(0.1)
-end
 
-if secureUI.Parent then
-    secureUI:Destroy()
-    
+-- 检查白名单
+local isLocalPlayerWhitelisted = IsWhitelisted(localPlayer)
+
+if isLocalPlayerWhitelisted then
+    StarterGui:SetCore("SendNotification", {
+        Title = "白名单认证成功",
+        Text = "玩家:"..localPlayer.Name.."，设备验证通过，正在启动脚本",
+        Duration = 7,
+    })
+    wait()
+else
     local hardwareID = GetHardwareID()
     local ipAddress = GetIPAddress()
     
     local copySuccess = CopyToClipboard(hardwareID)
     
     StarterGui:SetCore("SendNotification", {
-        Title = "验证超时",
+        Title = "白名单验证失败",
         Text = copySuccess and "设备ID已复制到剪贴板" or "设备ID: " .. hardwareID,
         Duration = 5
     })
     
     wait()
     
-    localPlayer:Kick("验证超时，请联系管理员获取卡密。设备ID: " .. hardwareID .. " IP: " .. ipAddress)
+    StarterGui:SetCore("SendNotification", {
+        Title = "即将被踢出",
+        Text = "设备未授权，请联系管理员",
+        Duration = 3
+    })
+    
+    wait()
+    localPlayer:Kick("设备未授权，请联系管理员获取白名单。设备ID: " .. hardwareID .. " IP: " .. ipAddress)
     return
 end
 
