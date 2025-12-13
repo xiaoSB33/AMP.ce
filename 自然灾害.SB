@@ -278,7 +278,11 @@ LOL:Button(
     end
 )
 ----------------------------------------------------------------------------------------------------------------------------------------
--- AKAJK 玩家控制功能
+
+--[[AKAJK:Textbox("设置速度", "文本", "输入的", "文本", function(Value)
+    print("Value")
+end)
+]]
 AKAJK:Slider(
     "跳跃",
     "",
@@ -287,12 +291,9 @@ AKAJK:Slider(
     500,
     false,
     function(Value)
-        if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
-            game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-        end
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
     end
 )
-
 AKAJK:Slider(
     "速度",
     "",
@@ -301,67 +302,28 @@ AKAJK:Slider(
     500,
     false,
     function(Value)
-        if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-        end
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
     end
 )
-
--- 快速跑步系统
-local Speed = 50
-local sudu = nil
-local isRunning = false
-
-AKAJK:Textbox("设置快速跑步", "run", "输入速度值", function(speedValue)
-    local numValue = tonumber(speedValue)
-    if numValue and numValue > 0 and numValue <= 500 then
-        Speed = numValue
-        print("快速跑步速度设置为: " .. Speed)
-        
-        if isRunning and sudu then
-            sudu:Disconnect()
-            sudu = game:GetService("RunService").Heartbeat:Connect(function()
-                local character = game.Players.LocalPlayer.Character
-                if character and character:FindFirstChild("Humanoid") then
-                    local humanoid = character.Humanoid
-                    if humanoid.MoveDirection.Magnitude > 0.1 then
-                        character:TranslateBy(humanoid.MoveDirection * Speed * 0.08)
-                    end
-                end
-            end)
-        end
-    else
-        print("请输入有效的速度值 (1-500)")
-    end
+AKAJK:Textbox("设置快速跑步", "run", "输入", function(speedValue)
+    Speed = speedValue
 end)
 
 AKAJK:Toggle("开启快速跑步(开/关)", "switch", false, function(enabled)
-    isRunning = enabled
-    
-    if enabled then
-        if sudu then
-            sudu:Disconnect()
-        end
-        
+    if enabled == true then
         sudu = game:GetService("RunService").Heartbeat:Connect(function()
-            local character = game.Players.LocalPlayer.Character
-            if character and character:FindFirstChild("Humanoid") then
-                local humanoid = character.Humanoid
-                if humanoid.MoveDirection.Magnitude > 0.1 then
-                    character:TranslateBy(humanoid.MoveDirection * Speed * 0.08)
-                end
+            if game:GetService("Players").LocalPlayer.Character and 
+               game:GetService("Players").LocalPlayer.Character.Humanoid and 
+               game:GetService("Players").LocalPlayer.Character.Humanoid.Parent and 
+               game:GetService("Players").LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 then
+                game:GetService("Players").LocalPlayer.Character:TranslateBy(game:GetService("Players").LocalPlayer.Character.Humanoid.MoveDirection * Speed / 0.5)
             end
         end)
-        print("快速跑步已开启，速度: " .. Speed)
-    else
-        if sudu then
-            sudu:Disconnect()
-            sudu = nil
-        end
-        print("快速跑步已关闭")
+    elseif not enabled and sudu then
+        sudu:Disconnect()
+        sudu = nil
     end
 end)
-
 AKAJK:Slider(
     "血量",
     "",
@@ -370,47 +332,19 @@ AKAJK:Slider(
     999999999,
     false,
     function(Value)
-        if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
-            game.Players.LocalPlayer.Character.Humanoid.Health = Value
-        end
+        game.Players.LocalPlayer.Character.Humanoid.Health = Value
     end
 )
 
-AKAJK:Slider(
-    "缩放距离",
-    "ZOOOOOM OUT!",
-    128,
-    128,
-    200000,
-    false,
-    function(value)
-        game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = value
-    end
-)
-
-AKAJK:Slider(
-    "设置重力（正常196.2）",
-    "Sliderflag",
-    196.2,
-    0.1,
-    1000,
-    false,
-    function(Value)
-        game.Workspace.Gravity = Value
-    end
-)
-
-AKAJK:Slider(
-    "视界（正常70）",
-    "Sliderflag",
-    70,
-    0.1,
-    250,
-    false,
-    function(v)
+AKAJK:Slider('缩放距离', 'ZOOOOOM OUT!',  128, 128, 200000,false, function(value)
+    game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = value
+    end)
+    AKAJK:Slider('设置重力（正常196.2）', 'Sliderflag', 196.2, 0.1, 1000,false, function(Value)
+    game.Workspace.Gravity = Value
+end)
+AKAJK:Slider('视界（正常70）', 'Sliderflag', 70, 0.1, 250, false, function(v)
         game.Workspace.CurrentCamera.FieldOfView = v
-    end
-)
+    end)
 Player:Button(
     "甩飞别人",
     function()
