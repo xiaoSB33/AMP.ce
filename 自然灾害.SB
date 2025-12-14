@@ -42,8 +42,7 @@ local amusement = window:Tab("娱乐", "17493876383")--1
 local SettingsTab = window:Tab("设置", "6034509993")--2
 local CNScript = window:Tab("脚本中心", "6031302918")--3
 local FEScript = window:Tab("FE", "6022668955")--4
-local Naturalbbb = window:Tab("SCP：角色扮演", "6031097229")--6
-local buildaship = window:Tab("造船寻宝", "6031097229")--5
+local buildaship = window:Tab("SCP角色扮演", "6031097229")--5
 local buildashie = window:Tab("鱼", "6031097229")--5
 local buildashic = window:Tab("把火车开到终点", "6031097229")--5
 local Natural = window:Tab("自然灾害生存", "6031097229")--6
@@ -112,10 +111,9 @@ local CNS = CNScript:section("其他国外脚本", false)
 local CN = CNScript:section("其他国内脚本", false)
 local AQ = CNScript:section("收费国内脚本破解", false)
 local FE = FEScript:section("FE", true)
-local FEsbsb = Naturalbbb:section("脚本", true)
 local Aoajlak = Natural:section("主要的", true)
 local Tab2 = Natural:section("脚本中心", true)
-local Tab3 = buildaship:section("主要的", true)
+local Tab3 = buildaship:section("脚本", true)
 local fakeTab3 = buildaship:section("脚本", true)
 local LOlTab3 = buildaship:section("角色", true)
 local LOlTab999 = buildashie:section("脚本", true)
@@ -2103,10 +2101,6 @@ FE:Button("FE", function()
 oadstring(game:HttpGet(('https://pastefy.ga/a7RTi4un/raw'),true))()
 end)
 
-FEsbsb:Button("空云脚本", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/SCP角色扮演",true))()
-end)
-
 Aoajlak:Label("主要的")
 
 Aoajlak:Toggle("自动农场胜出", "ToggleInfo", false, function(bool)
@@ -2636,25 +2630,9 @@ Tab3:Toggle(
 )
 
 fakeTab3:Button(
-    "无限方块（假）",
+    "空云脚本自制",
     function()
-        spawn(
-            function()
-                local guiinf =
-                    game:GetService("Players").LocalPlayer.PlayerGui.BuildGui.InventoryFrame.ScrollingFrame.BlocksFrame
-                _G.Blocks = false
-                while game:GetService("RunService").RenderStepped:wait() do
-                    if _G.Blocks then
-                        return
-                    end
-                    for i, v in pairs(guiinf:GetDescendants()) do
-                        if v.Name == "AmountText" then
-                            v.Text = math.huge
-                        end
-                    end
-                end
-            end
-        )
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaoSB33/M416/refs/heads/main/Wind/sb/SCP角色扮演",true))()
     end
 )
 
